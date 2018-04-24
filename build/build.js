@@ -1,5 +1,5 @@
 ({
-    baseUrl: "./",
+    baseUrl: "../",
     paths: {
         /*第三方库文件*/
         'domReady': 'lib/requirejs-domReady/domReady',
@@ -60,7 +60,7 @@
         //     deps: ['angular']
         // },
     },
-    dir: "./dist",
+    dir: "../dist",
     // mainConfigFile : "main.js",
     optimizeCss:'standard.keepLines',
     modules: [{
