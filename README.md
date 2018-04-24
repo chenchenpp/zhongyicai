@@ -3,7 +3,7 @@
             which is recorded by require management module and optimized by r.js.**
             
             
-           *build*
-           `cd build
-            node r.js -o build.js
-           `
+####build:
+           cd build
+           node r.js -o build.js
+           
