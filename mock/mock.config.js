@@ -3,7 +3,7 @@
  */
 define(
     [
-        'utilities/constant/ApiPathConstant',
+        'utilities/constant/apiPath.constant',
         'mock/data/data'
     ],function (apiPath,jsonDB) {
 
@@ -33,7 +33,7 @@ define(
          */
         return [
             /** 系统接口 */
-            // {"name":"menu", "desc":"菜单查询", "method":"POST", "url":config.backend.menuData, "data":jsonDB['menuData']},
+             {"name":"menu", "desc":"菜单查询", "method":"POST", "url":apiPath.menuData, "data":jsonDB['menuData']},
             // {"name":"reportRegistrationQuery", "desc":"报案登记查询", "method":"POST", "url":config.backend.prplregistList, "data":jsonDB['prplregistList']},
             // {"name":"reportTaskQuery", "desc":"报案任务查询", "method":"POST", "url":config.backend.queryPrpLregistList, "data":jsonDB['queryPrpLregistList']}
         ]

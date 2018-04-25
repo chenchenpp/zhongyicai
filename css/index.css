@@ -1,17 +1,86 @@
-/*20171113 人保车险流程页面*/
+@font-face {font-family: "iconfont";
+    src: url('../iconFont/iconfont.eot'); /* IE9*/
+    src: url('../iconFont/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../iconFont/iconfont.woff') format('woff'), /* chrome, firefox */
+    url('../iconFont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../iconFont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
 a{color:#4e9ff1;}
 a:hover{color:#ff5050;}
-.clearfix:after{  content:"";  display:block;  clear: both;  width:0;  }
+.clearfix:after{content:"";  display:block;  clear: both;  width:0;  }
 .clearfix{  *zoom:1;  }
 .tr{text-align: right!important;}
+.tc{text-align: center!important;}
 .pr{position: relative!important;}
+.ver_mid{vertical-align: middle}
+/*ui-tree 菜单*/
+.angular-ui-tree-nodes {position: inherit;padding: 0 !important;}
+.angular-ui-tree-node, .angular-ui-tree-placeholder {min-height: 36px;  }
+.angular-ui-tree-placeholder {min-height: inherit;}
+.angular-ui-tree-handle {min-height: 36px;}
+.angular-ui-tree-handle-helper {background: transparent;border: none;color: #fefefe;padding: 0;/*border-bottom: 1px solid #255b84*/}
+.angular-ui-tree-handle-helper>a:hover {color: #fefefe;background: #33e272; border: none; /*border-bottom: 1px solid #49a9ee;*/}
+.left_ul li div{width:100%;/*border-bottom:1px solid #255b84;*/}
+.left_ul li a{display:block;height:100%;width:100%;/*border-bottom:1px solid #00335a;*/}
+.left_ul li em{width:100%;height:2px;position:absolute;left:0;bottom:0;background:url(../images/old/li_bom.jpg) repeat-x;display:none}
+.left_ul li.li_active{height:47px;line-height:47px;background:#00365f;}
+.angular-ui-tree-node.li_active {border:1px solid red ;}
+.left_ul li.li_active a{border-bottom:none;}
+.left_ul li.li_active1{border-top:1px solid #4a5c6d}
+
+.left_ul li .menu-icon i{float:left;margin: 8px 23px 0 21px;}
+i[ng-class="node.image"]{width:16px;height:16px;float:left;background:url(../images/navbox.png) no-repeat 0 -30px; margin: 8px 23px 0 21px;}
+.left_ul li span{line-height: 35px;color: #ffffff;font-size: 14px;}
+.left_ul li i.arrow-right , .left_ul li i.arrow-down{position: absolute;right: 5px;font-size: 20px;line-height: 35px;}
+/*一级菜单显示颜色*/
+.angular-ui-tree-handle-helper.menuLevel-1{background:transparent;}
+.angular-ui-tree-handle-helper.menuLevel-1>a{background:#333333;}
+.angular-ui-tree-handle-helper.menuLevel-1>a:hover{background:#33e272;}
+/*当前路由选中颜色*/
+.angular-ui-tree-handle.li_active { background:transparent;}
+.angular-ui-tree-handle.li_active>a{background:#33e272;}
+
+/*菜单*/
+.main_left{position: fixed;height: 100%;left: 0;width:200px;top: 63px;background: #45484a;transition: left 200ms;}
+.main_left_show{left: 0}
+.main_left_hide{left: -190px;}
+.main_menu{min-height: 351px;z-index: 2000;opacity: 1.9;-webkit-opacity: 1.9; -moz-opacity: 1.9;-khtml-opacity: 1.9;filter:alpha(opacity=100);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; position:fixed; border-right: 1px solid #d7d7d7;-webkit-transition: left 500ms; /* For Safari 3.1 to 6.0 */transition:  left 500ms}
+.show_prompt{width: 19px;height: 100%;background: url(../imgs/nav-show.png) no-repeat;position: absolute;top: 32%;right: -20px;z-index: 99;cursor: pointer;}
+.hide_prompt{width: 19px;height: 100%;background: url(../imgs/nav-hide.png) no-repeat;position: absolute;top: 32%;right: -20px;z-index: 99;cursor: pointer;}/*头部*/
+.section{padding: 10px 20px;background-color: #e5e9f2;}
+.section1{padding: 5px 30px;background-color: #e5e9f2;}
+.position{margin-bottom: 10px;color: #666;font-size: 12px;padding-top: 80px;}
+.position1{margin-bottom: 0px;color: #666;font-size: 12px;padding-top: 80px;}
 /*头部*/
-.header_new{background-color: #fff;}
-.official{ width:1000px;margin:0 auto;}
-.official h1{ float:left; margin-top:30px;}
-.official .rotPhone{display:inline-block;margin-top:34px;padding-left:12px;margin-left:14px;font-size: 12px;color:#666;height:24px;line-height: 24px;border-left:1px solid #dcdcdc;}
-/*底部*/
-.foot .foot_bottom{background:#5c5c5c;height:101px;width:100%}
-.foot .foot_bottom .corpy{width:960px;margin:auto;text-align:center;padding-top:20px;}
-.foot .foot_bottom .corpy p{color:#bbb; line-height:30px;}
-.foot .foot_bottom .corpy p img{margin-top:4px;}
+.header_new{min-width:1024px;background-color: #fff;}
+.main{margin:0 auto;}
+.logo{margin: 0 4%;height: 60px}
+.headPic{width: 16%;padding-top: 10px}
+/*首页*/
+.content{margin: 0 50px 4%}
+.content>div{margin-top: 15px;padding:10px 2%;background-color: #ffffff;box-shadow: 0px 0px 10px #888888;border-radius: 6px}
+.content_first{height: 146px;}
+.content_second{height: 300px;}
+.content_three{height: 376px;}
+/*首页>快捷功能*/
+.shortcuts_title i{font-size: 20px;color: #4e9ff1}
+.shortcuts_title span{font-size: 18px;font-weight: bold;margin-left: 1%}
+.shortcuts{margin-top: 12px}
+.shortcuts>ul>li{float: left;margin: 10px 4%}
+.shortcuts dl dt img{width: 53px;height: 48px}
+/*首页>待办任务*/
+.task_content{width: 100%;height: 240px}
+.task_title i img{width: 18px;height: 20px;}
+.task_title span{font-size: 18px;font-weight: bold;margin-left: 1%}
+/*首页》中介预警*/
+.warn_title i img{width: 18px;height: 20px;}
+.warn_title span{font-size: 18px;font-weight: bold;margin-left: 1%}
+.warn_content{width: 100%;height: 300px}

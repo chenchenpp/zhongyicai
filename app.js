@@ -8,10 +8,11 @@ define([
     // 'ngAnimate',    //后期需要时放开注释
     // 'ngStorage',     //后期需要时放开注释
     'ocLazyLoad',
+    'eCharts',
     'uiRouter',
     'business',
-    'utilitie'
-    // 'mock/backend-mocks', // mock模块仅供本地测试 提交生产时需要注释
+    'utilitie',
+     'mock/backend-mocks' // mock模块仅供本地测试 提交生产时需要注释
     ],
     function (angular,a,d,g,h) {
         'use  strict';
@@ -22,7 +23,7 @@ define([
             'oc.lazyLoad',
             'ui.router',
             'ui.router.state',
-            // 'backend-mocks',  // mock模块仅供本地测试 提交生产时需要注释
+             'backend-mocks',  // mock模块仅供本地测试 提交生产时需要注释
             'business',
             'utilities'
         ]);

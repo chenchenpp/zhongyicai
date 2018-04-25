@@ -3,7 +3,7 @@
  * requireJS入口文件
  */
 require.config({
-     baseUrl: '/newecar_Front',                //本地启动
+     baseUrl: '/zhongyicai',                //本地启动
     //baseUrl: '/',                              //nginx启动
     urlArgs: 'v=' + window.CACTUS.version,
     paths: {
@@ -18,6 +18,9 @@ require.config({
          'ngStorage': 'lib/angular-storage/ngStorage.min',      //后期需要时放开注释
          'ngAnimate': 'lib/angular-animate/angular-animate',   //后期需要时放开注释
         'ngCookies': 'lib/angular-cookies/angular-cookies',
+        'eCharts':'lib/eCharts/echarts.simple.min',
+        'angular-ui-tree':'lib/angular-ui-tree/angular-ui-tree.min',  //机构树插件
+        'app':'app',
         /*业务模块入口文件*/
         'business': 'components/business.mod',
         // 基础组件、服务总入口
@@ -39,7 +42,15 @@ require.config({
         'ngCookies': {
             'exports': 'ngCookies',
             deps: ['angular']
-        }
+        },
+        'eCharts': {
+            'exports': 'eCharts'
+            //deps: ['angular']
+        },
+        'app': {
+            'exports': 'app',
+            deps: ['angular']
+        },
         // 'ngStorage': {
         //     'exports': 'ngStorage',
         //     deps: ['angular']
@@ -48,7 +59,8 @@ require.config({
     priority: [
         'jquery',
         'angular',
-        'uiRouter'
+        'uiRouter',
+        'app'
     ],
     waitSeconds: 0
 });
@@ -59,10 +71,12 @@ require([
         // 'ngCookies',
         // 'ngAnimate',   //后期需要时放开注释
         // 'ngStorage',  //后期需要时放开注释
+        'eCharts',
         'app',
         'route'
     ],
-    function ($, angular) {
+    function ($, angular,eCharts) {
+        window.echarts = eCharts;
         angular.element(document).ready(function () {
             //手工启动Angular APP
             angular.bootstrap(document, ['prpins']);

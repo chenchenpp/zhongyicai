@@ -34,7 +34,7 @@ define([], function () {
                 promise.then(
                     function (answer, status, headers) {
                         answer.status = true;
-                        deferred.resolve(answer, status, headers);
+                        deferred.resolve(answer.data, status, headers);
                     },
                     function (error, status, headers) {
                         error.status = false;
@@ -57,7 +57,7 @@ define([], function () {
                 promise.then(
                     function (answer, headers) {
                         answer.status = true;
-                        deferred.resolve(answer, status, headers);
+                        deferred.resolve(answer.data, status, headers);
                     },
                     function (error, headers) {
                         error.status = false;

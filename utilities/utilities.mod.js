@@ -7,13 +7,15 @@
 define([
     'angular',
     'utilities/provider/provider',
+    'utilities/factory/finderFactory',//接口
     'utilities/filter/filter',
     'utilities/constant/module',
     'utilities/dirctive/basic.components',
     'utilities/service/service',
-    'utilities/factory/finderFactory',//接口
+
     'utilities/template/template'
-],function (angular,eventBusHandler, finderFactoryHandler) {
+],function (angular,eventBusHandler,finderFactoryHandler ) {
+    'use strict';
     return angular.module('utilities', [
             'utilities.provider',
             'utilities.filter',
@@ -23,6 +25,5 @@ define([
         ])
     // .provider('eventBus',eventBusHandler)
         .factory('finder',finderFactoryHandler)
-    'use strict';
     /*增加模块依赖*/
 });
