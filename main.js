@@ -18,7 +18,7 @@ require.config({
          'ngStorage': 'lib/angular-storage/ngStorage.min',      //后期需要时放开注释
          'ngAnimate': 'lib/angular-animate/angular-animate',   //后期需要时放开注释
         'ngCookies': 'lib/angular-cookies/angular-cookies',
-        'eCharts':'lib/eCharts/echarts.simple.min',
+        'eCharts':'lib/eCharts/echarts.min',
         'angular-ui-tree':'lib/angular-ui-tree/angular-ui-tree.min',  //机构树插件
         'app':'app',
         /*业务模块入口文件*/

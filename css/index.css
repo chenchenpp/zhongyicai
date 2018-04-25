@@ -13,8 +13,6 @@
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
-a{color:#4e9ff1;}
-a:hover{color:#ff5050;}
 .clearfix:after{content:"";  display:block;  clear: both;  width:0;  }
 .clearfix{  *zoom:1;  }
 .tr{text-align: right!important;}
@@ -26,10 +24,10 @@ a:hover{color:#ff5050;}
 .angular-ui-tree-node, .angular-ui-tree-placeholder {min-height: 36px;  }
 .angular-ui-tree-placeholder {min-height: inherit;}
 .angular-ui-tree-handle {min-height: 36px;}
-.angular-ui-tree-handle-helper {background: transparent;border: none;color: #fefefe;padding: 0;/*border-bottom: 1px solid #255b84*/}
-.angular-ui-tree-handle-helper>a:hover {color: #fefefe;background: #33e272; border: none; /*border-bottom: 1px solid #49a9ee;*/}
-.left_ul li div{width:100%;/*border-bottom:1px solid #255b84;*/}
-.left_ul li a{display:block;height:100%;width:100%;/*border-bottom:1px solid #00335a;*/}
+.angular-ui-tree-handle-helper {background: transparent;border: none;color: #fefefe;padding: 0;}
+.angular-ui-tree-handle-helper>a:hover {color: #fefefe;background: #33e272; border: none;}
+.left_ul li div{width:100%;}
+.left_ul li a{display:block;height:100%;width:100%}
 .left_ul li em{width:100%;height:2px;position:absolute;left:0;bottom:0;background:url(../images/old/li_bom.jpg) repeat-x;display:none}
 .left_ul li.li_active{height:47px;line-height:47px;background:#00365f;}
 .angular-ui-tree-node.li_active {border:1px solid red ;}
@@ -42,7 +40,7 @@ i[ng-class="node.image"]{width:16px;height:16px;float:left;background:url(../ima
 .left_ul li i.arrow-right , .left_ul li i.arrow-down{position: absolute;right: 5px;font-size: 20px;line-height: 35px;}
 /*一级菜单显示颜色*/
 .angular-ui-tree-handle-helper.menuLevel-1{background:transparent;}
-.angular-ui-tree-handle-helper.menuLevel-1>a{background:#333333;}
+.angular-ui-tree-handle-helper.menuLevel-1>a{background:#333333;color: #ffffff}
 .angular-ui-tree-handle-helper.menuLevel-1>a:hover{background:#33e272;}
 /*当前路由选中颜色*/
 .angular-ui-tree-handle.li_active { background:transparent;}
@@ -60,21 +58,22 @@ i[ng-class="node.image"]{width:16px;height:16px;float:left;background:url(../ima
 .position{margin-bottom: 10px;color: #666;font-size: 12px;padding-top: 80px;}
 .position1{margin-bottom: 0px;color: #666;font-size: 12px;padding-top: 80px;}
 /*头部*/
-.header_new{min-width:1024px;background-color: #fff;}
-.main{margin:0 auto;}
+.header_new{min-width:1024px;width:100%;height:63px;background-color: #fff;position: fixed;top:0;z-index: 99999}
+.main{width:100%;height:100%;margin:0 auto;background-color: #E7E7E7}
 .logo{margin: 0 4%;height: 60px}
 .headPic{width: 16%;padding-top: 10px}
 /*首页*/
-.content{margin: 0 50px 4%}
+.content{padding: 60px 50px 4%;}
 .content>div{margin-top: 15px;padding:10px 2%;background-color: #ffffff;box-shadow: 0px 0px 10px #888888;border-radius: 6px}
 .content_first{height: 146px;}
 .content_second{height: 300px;}
 .content_three{height: 376px;}
 /*首页>快捷功能*/
+.shortcuts{width: 100%}
+.shortcuts ul{width: 100%;padding-left:3%}
 .shortcuts_title i{font-size: 20px;color: #4e9ff1}
 .shortcuts_title span{font-size: 18px;font-weight: bold;margin-left: 1%}
-.shortcuts{margin-top: 12px}
-.shortcuts>ul>li{float: left;margin: 10px 4%}
+.shortcuts>ul>li{float: left;margin: 10px 3%}
 .shortcuts dl dt img{width: 53px;height: 48px}
 /*首页>待办任务*/
 .task_content{width: 100%;height: 240px}

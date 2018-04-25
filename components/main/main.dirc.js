@@ -20,10 +20,6 @@ define([
                         var barChart = echarts.init(chart);
                         // 指定图表的配置项和数据
                         var option = {
-                            title: {
-                                text: 'ECharts 入门示例'
-                            },
-                            tooltip: {},
                             legend: {
                                 data: ['销量']
                             },
@@ -34,7 +30,26 @@ define([
                             series: [{
                                 name: '销量',
                                 type: 'bar',
-                                data: [5, 20, 36, 10, 10, 20]
+                                barWidth : 20,
+                                data: [5, 20, 36, 10, 10, 20],
+                                //头部显示文本
+                                label:{
+                                    normal:{
+                                        show:true,
+                                        position:'top',
+                                        textStyle:{
+                                            color:'black',
+                                        }
+                                    }
+                                },
+                                //柱状条样式
+                                itemStyle:{
+                                    normal:{
+                                        //柱形图圆角，初始化效果
+                                        barBorderRadius:[10, 10, 0, 0],
+                                        color:"#1186F4",
+                                    }
+                                }
                             }]
                         };
                         // 使用刚指定的配置项和数据显示图表。
@@ -56,21 +71,25 @@ define([
                         var ele=ele[0];
                         var pieCharts=echarts.init(ele);
                         var option={
-                            title: {
-                                text: 'ECharts 入门示例'
-                            },
-                            tooltip: {},
-                            legend: {
-                                data: ['销量']
-                            },
-                            xAxis: {},
-                            yAxis: {},
                             series: [{
                                 name: '销量',
                                 type: 'pie',
-                                data: [5, 20, 36, 10, 10, 20]
-                            }]
-                        }
+                                radius: '80%',
+                                data: [
+                                    {value:20, name:'协议审核流程20个'},
+                                    {value:30, name:'人员审核流程30个'},
+                                    {value:30, name:'渠道审核流程30个'},
+                                    {value:10, name:'基本法审核流程10个'},
+                                    {value:20, name:'黑名单审核流程20个'},
+                                    {value:30, name:'协议审核流程30个'},
+                                    {value:0, name:'费用政策审核流程0个'},
+                                    {value:10, name:'团队审核流程10个'},
+                                    {value:8, name:'手续费批量调整审核流程8个'},
+                                    {value:20, name:'结算单审核流程20个'},
+                                    {value:20,name:'考核结果确认审核流程20个'}
+                                ]
+                            }],
+                        };
                         // 使用刚指定的配置项和数据显示图表。
                         pieCharts.setOption(option);
                     }

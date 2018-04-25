@@ -8,7 +8,8 @@
     <!--<div ng-show="isActive" class="fl" style="width: 200px;height:200px;background: #ffff00"></div>-->
     <script type="text/ng-template" id="nodes_renderer.html">
         <div ui-tree-handle class="angular-ui-tree-handle-helper"
-             ng-class="{'li_active' : node.url==currentURL.currentType,'menuLevel-1' : node.menuLevel==1}">
+             ng-class="{'li_active' : node.actionURL==currentURL.currentType,'menuLevel-1' : node.menuLevel==1}">
+            <!--有子级情况下-->
             <a ng-if="node.nodes && node.nodes.length > 0"
                href=""
                ng-style="{'padding-left':(node.menuLevel-1)*10+'px'}"
@@ -16,26 +17,25 @@
                ng-click="toggleDealNew(this)">
                 <span  ng-bind-html="node.image" class="menu-icon" ></span>
                 <span class="left-menu-name" ng-bind="node.menuCName"></span>
-                <i class="iconfont arrow-down" ng-show="collapsed"
+                <i class="iconfont arrow-down" ng-show="!collapsed"
                    style="position:absolute;">&#xe600;</i>
-                <i class="iconfont arrow-right" ng-show="!collapsed"
+                <i class="iconfont arrow-right" ng-show="collapsed"
                    style="position:absolute;">&#xea28;</i>
             </a>
-            <!--ui-sref="{{node.url}}"-->
-            <!--ui-sref-opts="{reload:'{{node.url}}'}"-->
+            <!--无子级情况下-->
             <a ng-if="!(node.nodes && node.nodes.length > 0)"
                data-nodrag
                ng-style="{'padding-left':(node.menuLevel-1)*10+'px'}"
                ng-click="toggleDealNew(this, 'menu')"
                class="end"
-               ui-sref="{{node.url}}">
+               ui-sref="{{node.actionURL}}">
                 <!--<i ng-class="node.image">{{activeFlag}}</i>-->
                 <span  ng-bind-html="node.image" class="menu-icon" ></span>
                 <span class="left-menu-name" ng-bind="node.menuCName"></span>
             </a>
         </div>
-        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-            <li ng-repeat="node in node.nodes" ng-show="!showNavMenu"
+        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: !collapsed}">
+            <li ng-repeat="node in node.nodes"
                 ui-tree-node ng-include="'nodes_renderer.html'" ng-class="menuColors[node.menuLevel%6]">
             </li>
         </ol>

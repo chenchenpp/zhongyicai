@@ -1,5 +1,7 @@
-html,body,ul,li,a,span,h1,h2,h3,h4,h5,h6,form,input,em,i,dl,dt,dd,table,tr,td,th,thead,tbody{
-    margin: 0;padding: 0;font-style: normal;font-weight: normal;
+html,body,ul,li,a,span,h1,h2,h3,h4,h5,h6,form,input,em,i,dl,dt,dd,table,tr,td,th,thead,tbody,ol{
+    margin: 0;
+    padding: 0;
+    font-style: normal;font-weight: normal;
     font:14px  '微软雅黑', 'Microsoft YaHei', 'Hei', sans-serif;
 }
 p{margin: 0;padding: 0;}

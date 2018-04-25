@@ -12,9 +12,9 @@ define([
     'uiRouter',
     'business',
     'utilitie',
-     'mock/backend-mocks' // mock模块仅供本地测试 提交生产时需要注释
-    ],
-    function (angular,a,d,g,h) {
+     'mock/backend-mocks', // mock模块仅供本地测试 提交生产时需要注释
+    'angular-ui-tree'
+    ], function (angular,a,d,g,h) {
         'use  strict';
         var app = angular.module('prpins', [
             'ngCookies',
@@ -25,7 +25,8 @@ define([
             'ui.router.state',
              'backend-mocks',  // mock模块仅供本地测试 提交生产时需要注释
             'business',
-            'utilities'
+            'utilities',
+            'ui.tree'
         ]);
 
         app.config([
@@ -60,7 +61,9 @@ define([
         }]);
 
         // 禁用ie的 ajax request caching
-        app.config(['$httpProvider',function($httpProvider){
+        app.config(['$httpProvider','treeConfig',function($httpProvider,treeConfig){
+            //菜单折叠配置
+            treeConfig.defaultCollapsed = false;     //true折叠，false展开
             if (!$httpProvider.defaults.headers.get) {
                 $httpProvider.defaults.headers.get = {};
             }
