@@ -20,6 +20,7 @@
 .pr{position: relative!important;}
 .ver_mid{vertical-align: middle}
 /*ui-tree 菜单*/
+.hidden{display: none}
 .angular-ui-tree-nodes {position: inherit;padding: 0 !important;}
 .angular-ui-tree-node, .angular-ui-tree-placeholder {min-height: 36px;  }
 .angular-ui-tree-placeholder {min-height: inherit;}
@@ -33,7 +34,6 @@
 .angular-ui-tree-node.li_active {border:1px solid red ;}
 .left_ul li.li_active a{border-bottom:none;}
 .left_ul li.li_active1{border-top:1px solid #4a5c6d}
-
 .left_ul li .menu-icon i{float:left;margin: 8px 23px 0 21px;}
 i[ng-class="node.image"]{width:16px;height:16px;float:left;background:url(../images/navbox.png) no-repeat 0 -30px; margin: 8px 23px 0 21px;}
 .left_ul li span{line-height: 35px;color: #ffffff;font-size: 14px;}
