@@ -24,7 +24,9 @@ require.config({
         /*业务模块入口文件*/
         'business': 'components/business.mod',
         // 基础组件、服务总入口
-        'utilitie': 'utilities/utilities.mod'
+        'utilitie': 'utilities/utilities.mod',
+        // font 字体文件
+        'font': 'font/iconfont'
     },
     shim: {
         'angular': {
@@ -73,7 +75,9 @@ require([
         // 'ngStorage',  //后期需要时放开注释
         'eCharts',
         'app',
-        'route'
+        'route',
+        'font'
+
     ],
     function ($, angular,eCharts) {
         window.echarts = eCharts;

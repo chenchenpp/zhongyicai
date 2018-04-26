@@ -34,17 +34,27 @@ define([
                 });
                 return result
             };
-
+            var curOpenNode;
             //菜单切换处理
             $scope.toggleDealNew = function (scope, menu) {
                 //定位当前结点的树对象
-                var testDom = scope.$parent.$nodeScope;
-                if (!menu) {
-                    if (!testDom.collapsed) {
-                        $scope.$broadcast("angular-ui-tree:expand-all");
+                var testDom = scope.$nodeScope;
+                // if (!menu) {
+                    if(testDom.collapsed == false){ // 如果打开当前节点
+                        // 关闭已经打开的兄弟节点
+                        testDom.siblings().forEach(function (item) {
+                            if(item.collapsed == true){
+                                item.$broadcast("angular-ui-tree:expand-all");
+                            }
+                        });
+                        //打开当前节点
+                        testDom.toggle()
+                    } else {
+                        // 关闭当前节点以及后代节点
+                        testDom.$broadcast("angular-ui-tree:expand-all");
                     }
-                    testDom.toggle();
-                }
+
+                // }
             };
 
             //设置菜单的不同背景
